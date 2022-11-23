@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NutritionApp.Views.BacklogsPage"
+             xmlns:viewModels="clr-namespace:NutritionApp.ViewModels" x:DataType="viewModels:BackLogsPageViewModel">
+
+
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout>
+                <Label HorizontalOptions="Center" VerticalOptions= "StartAndExpand" Text="Your BMI history" FontSize="15"></Label>
+                <CollectionView Margin="20"
+                    ItemsSource="{Binding ListBacklog}"
+                    ItemTemplate="{StaticResource BacklogsTemplate}"
+                    SelectionMode="Single" 
+                    SelectionChanged="OnCollectionViewSelectionChanged"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

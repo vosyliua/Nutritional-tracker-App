@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NutritionApp.Views.FoodsPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:viewModels="clr-namespace:NutritionApp.ViewModels" x:DataType="viewModels:FoodSearchPageViewModel">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Update Settings" Command="{Binding goToSettingsPageCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <StackLayout >
+        <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="0" >
+            <Entry x:Name="nameEntry" Text="{Binding FoodName}"
+               Placeholder="Enter food" />
+            <Entry x:Name="measurmentEntry" Text="{Binding Measurment}"
+               Placeholder="Enter measurment" />
+            <Button Text="Search Food"
+                Command="{Binding getFoodCommand}"  />
+        </StackLayout>
+      <StackLayout Grid.Row="2" Orientation="Horizontal" Spacing="15">
+            <Image Source="{Binding RetrievedFood.Image }" WidthRequest="70" HeightRequest="70"></Image>
+            <Label Text="{Binding RetrievedFood.Name, Mode=TwoWay}"></Label>
+            <Label Text="{Binding RetrievedFood.Calories, Mode=TwoWay}"></Label>
+            <Label Text="Calories"></Label>
+            <Label Text="Per 100 grams"></Label>
+        </StackLayout>
+        <Button Text="Add Food"
+                Command="{Binding saveFoodCommand}"  />
+        <Label>
+            <Label.Text>
+                <MultiBinding StringFormat="{}{0} {1}">
+                    <Binding Path="SettingsCaloriesText"></Binding>
+                    <Binding Path="SettingsCalories1"></Binding>
+                </MultiBinding>
+            </Label.Text>
+        </Label>
+        <CollectionView Margin="20"
+                    ItemsSource="{Binding Foods}"
+                    ItemTemplate="{StaticResource FoodsTemplate}"
+                    SelectionMode="Single" />
+        <Label Text="Total Calories Eaten"></Label>
+        <StackLayout Grid.Row="3" Orientation="Horizontal" Spacing="20">
+            <Label Text="{Binding Value}" TextDecorations="None" ></Label>
+            <Button Text="Save Diary" Command="{Binding saveToDiaryCommand}" HorizontalOptions="EndAndExpand"></Button>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
