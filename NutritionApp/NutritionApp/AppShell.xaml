@@ -30,9 +30,9 @@
                       Title="Backlogs"
                       Icon="monkey.png"
                       ContentTemplate="{DataTemplate views:BacklogsPage}" />
-        
+
     </FlyoutItem>
-    
+
     <MenuItem Text="About"
                   Icon="info.png"
                   Command="{Binding AboutCommand}" />
@@ -43,3 +43,4 @@
               CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />
 
 </Shell>
+    

@@ -18,11 +18,11 @@
             </StackLayout >
             <StackLayout Grid.Row="2">
                 <Label Text="Enter your height" HorizontalOptions="Center"></Label>
-                <Entry Placeholder="Enter your height" Text="{Binding Height1}" ></Entry>
+                <Entry Placeholder="Enter your height (cm)" Text="{Binding Height1}" ></Entry>
             </StackLayout>
             <StackLayout Grid.Row="3">
                 <Label Text="Enter your weight" HorizontalOptions="Center"></Label>
-                <Entry Placeholder="Enter your weight" Text="{Binding Weight1}"></Entry>
+                <Entry Placeholder="Enter your weight (kg)" Text="{Binding Weight1}"></Entry>
             </StackLayout>
             <StackLayout Grid.Row="4" VerticalOptions="CenterAndExpand">
                 <Picker Title="Choose your activity level"
