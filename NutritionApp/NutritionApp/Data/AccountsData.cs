@@ -82,7 +82,6 @@ namespace NutritionApp.Data
           var authHeaderValue = Convert.ToBase64String(Encoding.UTF8.GetBytes(authData));
 
           _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", authHeaderValue);
-          Console.WriteLine(_httpClient.DefaultRequestHeaders.Authorization);
           var response = await _httpClient.GetAsync("Accounts/GetAccounts");
                 
           if (response.IsSuccessStatusCode)
@@ -92,7 +91,6 @@ namespace NutritionApp.Data
                     
                 var accounts =  JsonSerializer.Deserialize<IEnumerable<Account>>(responseAsString);
                 Username = user;
-                Console.WriteLine("in get accounts testing if user set " + Username);
                 return Username;
                     
              }

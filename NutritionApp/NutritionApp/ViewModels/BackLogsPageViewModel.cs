@@ -46,7 +46,6 @@ namespace NutritionApp.ViewModels
             _accountService = accountService;
             Backlogs = new ObservableCollection<Fixed>();
             ListBacklog = new List<Backlog>();
-            Console.WriteLine("Initialization1");
             
         }
 
@@ -66,12 +65,8 @@ namespace NutritionApp.ViewModels
 
         public async Task Initialise()
         {
-            Console.WriteLine("in initialise function backlogpage");
             var username = _accountService.getUsername();
-            Console.WriteLine(username);
             ListBacklog = await _backlogService.returnData(username);
-            Console.WriteLine(ListBacklog.Count);
-
         }
 
     }

@@ -37,13 +37,11 @@ namespace NutritionApp.Data
         public async void calculateCalories(Settings settings, string username)
         {
             RetrievedSett = settings;
-            Console.WriteLine("save settings user" + RetrievedUser);
             if (RetrievedSett.Height!=0)
             {
                 if (RetrievedSett.Gender == "Male")
                 {
                     CaloriesPerDay = 66.5 + (13.75 * RetrievedSett.Weight) + (5.003 * RetrievedSett.Height) - (6.75 * RetrievedSett.Age);
-                    Console.WriteLine(CaloriesPerDay + "   for men");
                     if (RetrievedSett.Activity == "Light: excersise 1 - 3 times a week")
                     {
                         CaloriesPerDay = CaloriesPerDay + 200;
@@ -64,7 +62,6 @@ namespace NutritionApp.Data
                 else
                 {
                     CaloriesPerDay = 655.1 + (9.563 * RetrievedSett.Weight) + (1.850 * RetrievedSett.Height) - (4.676 * RetrievedSett.Age);
-                    Console.WriteLine(CaloriesPerDay + "   for women");
                     if (RetrievedSett.Activity == "Light: excersise 1 - 3 times a week")
                     {
                         CaloriesPerDay = CaloriesPerDay + 200;

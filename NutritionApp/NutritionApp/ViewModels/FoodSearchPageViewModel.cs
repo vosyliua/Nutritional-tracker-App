@@ -166,7 +166,6 @@ namespace NutritionApp.ViewModels
             if (user != null && user !="")
             {
                 var data = await _settingsService.getSettingsCalories(user);
-                Console.WriteLine(data);
                 SettingsCalories2 = data.Calories;
                 SettingsCalories = data.Calories;
                 SettingsCalories1 = SettingsCalories.ToString();
