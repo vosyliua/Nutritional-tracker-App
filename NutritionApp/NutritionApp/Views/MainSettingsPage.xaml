@@ -17,11 +17,11 @@
                 <Entry Placeholder="Enter your age" Text="{Binding Age11}"></Entry>
             </StackLayout >
             <StackLayout Grid.Row="2">
-                <Label Text="Enter your height" HorizontalOptions="Center"></Label>
+                <Label Text="Enter your height (cm)" HorizontalOptions="Center"></Label>
                 <Entry Placeholder="Enter your height" Text="{Binding Height11}" ></Entry>
             </StackLayout>
             <StackLayout Grid.Row="3">
-                <Label Text="Enter your weight" HorizontalOptions="Center"></Label>
+                <Label Text="Enter your weight (kg)" HorizontalOptions="Center"></Label>
                 <Entry Placeholder="Enter your weight" Text="{Binding Weight11}"></Entry>
             </StackLayout>
             <StackLayout Grid.Row="4" VerticalOptions="CenterAndExpand">
