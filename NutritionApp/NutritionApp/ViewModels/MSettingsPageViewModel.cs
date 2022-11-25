@@ -81,8 +81,6 @@ namespace NutritionApp.ViewModels
         public async void updateSettings()
         {
             var userRetrieved1 = _accountService1.getUsername();
-            Console.WriteLine("nicknameUpdate" + userRetrieved1);
-
             var settings = new Settings
             {
                 Age = Age11,

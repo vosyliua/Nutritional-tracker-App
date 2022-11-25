@@ -215,7 +215,6 @@ namespace NutritionApp.ViewModels
                 return;
             }
             await _backlogService.addData(Foods, username);
-            Console.WriteLine(Foods[0].Name);
             Foods.Clear();
             var x = Math.Round(SettingsCalories2);
             SettingsCalories = x;
